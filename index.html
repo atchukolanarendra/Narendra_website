@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- SVG Definitions for gradients -->
+<svg width="0" height="0" style="position: absolute;">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2563eb" />
+            <stop offset="100%" stop-color="#1e40af" />
+        </linearGradient>
+    </defs>
+</svg>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Narendra Kumar Atchukola - Information Technology Graduate and Python Developer">
+    <meta name="keywords" content="portfolio, python developer, information technology, web development">
+    <meta name="author" content="Narendra Kumar Atchukola">
     <title>Narendra Kumar Atchukola - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/code.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Optimized Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">NK</div>
+            <div class="logo" aria-label="Logo">NK</div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -24,118 +52,481 @@
     </nav>
 
     <section id="home" class="hero">
+        <div class="particles-container" id="particles-js"></div>
         <div class="hero-content">
+            <div class="profile-img-container">
+                <div class="profile-img-placeholder">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
             <h1>Narendra Kumar Atchukola</h1>
-            <p class="tagline">Information Technology Graduate | Python Developer | Machine Learning Enthusiast</p>
+            <p class="tagline" data-text="Information Technology Graduate | Python Developer">Information Technology Graduate | Python Developer</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/narendra-kumar-atchukola-952b4a2a2/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/atchukolanarendra" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/narendra-kumar-atchukola-952b4a2a2/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/atchukolanarendra" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="mailto:atchukolanarendra@gmail.com" aria-label="Email Me"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn primary-btn">Contact Me</a>
+                <a href="#projects" class="btn secondary-btn">View Projects</a>
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="objective">
-            <p>To secure a challenging position in a reputed organization where I can apply my knowledge and skills as a recent graduate, while contributing to the growth of the company and gaining valuable industry experience.</p>
+        <h2 data-text="Who I Am">About Me</h2>
+        <div class="section-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="highlight-text">Hello! I'm Narendra Kumar Atchukola, a passionate Information Technology graduate with expertise in Python development.</p>
+                    <p>My objective is to secure a challenging position in a reputed organization where I can apply my knowledge and skills as a recent graduate, while contributing to the growth of the company and gaining valuable industry experience.</p>
+                    <p>I'm enthusiastic about creating innovative solutions and continuously expanding my technical knowledge in the rapidly evolving field of technology.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-value"><i class="fas fa-code"></i></div>
+                        <div class="stat-label">Python Development</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value"><i class="fas fa-laptop-code"></i></div>
+                        <div class="stat-label">Web Development</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value"><i class="fas fa-database"></i></div>
+                        <div class="stat-label">Data Analysis</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="education" class="education">
-        <h2>Education</h2>
-        <div class="education-card">
-            <h3>Kallam Haranadha Reddy Institute of Technology</h3>
-            <p>Information Technology</p>
-            <p>CGPA: 7.8</p>
-            <p>2020 - 2024</p>
-        </div>
-        <div class="education-card">
-            <h3>Narayana Junior College</h3>
-            <p>MPC</p>
-            <p>CGPA: 8.3</p>
-            <p>Passout: 2020</p>
+        <h2 data-text="Academic Journey">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content education-card">
+                    <h3>Bachelor of Technology in Information Technology</h3>
+                    <div class="institution">
+                        <i class="fas fa-university"></i>
+                        <span>Kallam Haranadha Reddy Institute of Technology</span>
+                    </div>
+                    <div class="education-details">
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>CGPA: 7.8</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-book"></i>
+                            <span>Core subjects: Data Structures, Algorithms, Database Management, Web Development</span>
+                        </div>
+                        <div class="detail-item date-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2020 - 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content education-card">
+                    <h3>Higher Secondary Education (MPC)</h3>
+                    <div class="institution">
+                        <i class="fas fa-school"></i>
+                        <span>Narayana Junior College</span>
+                    </div>
+                    <div class="education-details">
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>CGPA: 8.3</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-book"></i>
+                            <span>Focus: Mathematics, Physics, Chemistry</span>
+                        </div>
+                        <div class="detail-item date-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2018 - 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="skills" class="skills">
-        <h2>Skills</h2>
+        <h2 data-text="My Expertise">Skills</h2>
         <div class="skills-container">
             <div class="skills-category">
-                <h3>Programming</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>SQL</li>
-                </ul>
+                <h3>Programming Languages</h3>
+                <div class="skill-bars">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>C</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML/CSS</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>SQL</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="skills-category">
-                <h3>Non-Programming</h3>
-                <ul>
-                    <li>Problem-Solving</li>
-                    <li>Team Management</li>
-                    <li>Microsoft Word</li>
-                </ul>
+                <h3>Professional Skills</h3>
+                <div class="skill-circles">
+                    <div class="skill-circle">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <path class="circle-progress"
+                                stroke-dasharray="85, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <text x="18" y="20.35" class="percentage">85%</text>
+                        </svg>
+                        <span class="skill-name">Problem-Solving</span>
+                    </div>
+                    <div class="skill-circle">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <path class="circle-progress"
+                                stroke-dasharray="80, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <text x="18" y="20.35" class="percentage">80%</text>
+                        </svg>
+                        <span class="skill-name">Team Management</span>
+                    </div>
+                    <div class="skill-circle">
+                        <svg viewBox="0 0 36 36">
+                            <path class="circle-bg"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <path class="circle-progress"
+                                stroke-dasharray="75, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                            />
+                            <text x="18" y="20.35" class="percentage">75%</text>
+                        </svg>
+                        <span class="skill-name">Communication</span>
+                    </div>
+                </div>
             </div>
             <div class="skills-category">
-                <h3>Tools & Applications</h3>
-                <ul>
-                    <li>Visual Studio</li>
-                    <li>PyCharm</li>
-                </ul>
+                <h3>Tools & Technologies</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-code"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="experience">
-        <h2>Experience</h2>
-        <div class="experience-card">
-            <h3>Machine Learning Intern</h3>
-            <p class="company">BIST TECHNOLOGIES</p>
-            <p class="duration">February 2024 - April 2024</p>
-        </div>
-        <div class="experience-card">
-            <h3>Python Developer</h3>
-            <p class="company">MALIKARJUNA INFOSYS</p>
-            <p class="duration">May 2023 - July 2023</p>
+        <h2 data-text="Work History">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content experience-card">
+                    <div class="experience-header">
+                        <h3>Python Developer Intern</h3>
+                        <div class="company-badge">BIST TECHNOLOGIES</div>
+                    </div>
+                    <div class="experience-details">
+                        <ul class="responsibility-list">
+                            <li>Developed and implemented Python applications for data processing and analysis</li>
+                            <li>Collaborated with the development team to improve code quality and performance</li>
+                            <li>Participated in regular code reviews and team meetings</li>
+                            <li>Gained hands-on experience with real-world Python development</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <div class="detail-item date-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Feb 2024 - Apr 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content experience-card">
+                    <div class="experience-header">
+                        <h3>Python Developer</h3>
+                        <div class="company-badge">MALIKARJUNA INFOSYS</div>
+                    </div>
+                    <div class="experience-details">
+                        <ul class="responsibility-list">
+                            <li>Developed and maintained Python applications for data processing and analysis</li>
+                            <li>Implemented efficient algorithms to optimize application performance</li>
+                            <li>Worked with SQL databases to store and retrieve data</li>
+                            <li>Collaborated with team members to meet project deadlines</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">API Development</span>
+                        </div>
+                        <div class="detail-item date-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>May 2023 - Jul 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Real-Time Data Processing System for Weather Monitoring</h3>
-            <div class="project-details">
-                <p>A sophisticated system for processing and monitoring weather data in real-time.</p>
+        <h2 data-text="My Work">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Real-Time Data Processing System for Weather Monitoring</h3>
+                    <div class="project-details">
+                        <p>A sophisticated system for processing and monitoring weather data in real-time, providing accurate forecasts and analytics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Data Processing</span>
+                            <span class="tech-tag">Real-time Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link" aria-label="View source code">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="project-card">
-            <h3>Identifying Bone Tumour Using X-Ray Images</h3>
-            <div class="project-details">
-                <p>Machine learning-based system for detecting bone tumours from X-ray imagery.</p>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-x-ray"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Identifying Bone Tumour Using X-Ray Images</h3>
+                    <div class="project-details">
+                        <p>Machine learning-based system for detecting bone tumours from X-ray imagery with high accuracy, helping medical professionals in diagnosis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Image Processing</span>
+                            <span class="tech-tag">Healthcare</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link" aria-label="View source code">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Personal Portfolio Website</h3>
+                    <div class="project-details">
+                        <p>A responsive personal portfolio website showcasing my skills, experience, and projects using modern web technologies.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link" aria-label="View source code">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <p>atchukolanarendra@gmail.com</p>
+        <h2 data-text="Let's Connect">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p class="contact-text">Feel free to reach out to me for any opportunities or inquiries. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:atchukolanarendra@gmail.com">atchukolanarendra@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+918688217082">+91 8688217082</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Guntur, Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links contact-social">
+                    <a href="https://www.linkedin.com/in/narendra-kumar-atchukola-952b4a2a2/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/atchukolanarendra" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="mailto:atchukolanarendra@gmail.com" aria-label="Email Me"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <p>+91 8688217082</p>
+            <div class="contact-form-container">
+                <form id="contact-form" class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment-alt"></i> Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Narendra Kumar Atchukola. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">NK</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links footer-social">
+                <a href="https://www.linkedin.com/in/narendra-kumar-atchukola-952b4a2a2/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/atchukolanarendra" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="mailto:atchukolanarendra@gmail.com" aria-label="Email Me"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Narendra Kumar Atchukola. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart"></i> by Narendra Kumar</p>
+        </div>
     </footer>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <script src="script.js"></script>
+    <!-- Conditionally load Particles.js only on desktop devices -->
+    <script>
+        // Only load particles.js on desktop devices
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && 
+            (!navigator.hardwareConcurrency || navigator.hardwareConcurrency > 4)) {
+            const particlesScript = document.createElement('script');
+            particlesScript.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+            particlesScript.defer = true;
+            document.body.appendChild(particlesScript);
+        }
+    </script>
+    
+    <!-- Main JavaScript (loaded with defer) -->
+    <script src="script.js" defer></script>
 </body>
 </html> 
